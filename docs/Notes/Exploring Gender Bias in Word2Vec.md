@@ -43,7 +43,7 @@ I find it interesting that we can learn about what biases our society holds by u
 	- This could also show a lack of representation of women in leadership positions
 	- sports are male dominated domains
 -  Careers that are associated with men/women
-	![[../assets/gender-biases-word2vec.png]]
+	![[../assets/gender-biases-word2vec.JPG]]
 	- This indicates other historical and cultural stereotypes
 	- Systemic gender biases
 	- Representaition of men/women in different professions
