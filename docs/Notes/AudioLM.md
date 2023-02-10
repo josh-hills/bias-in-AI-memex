@@ -31,14 +31,14 @@ projects::[[]]
 
 ### Related Links
 
-This connects directly with [[Jan 30 Lec]], AudioLM is a less specific (more dumbed down) version of MusicLM
+-This connects directly with [[Jan 30 Lec]], AudioLM is a less specific (more dumbed down) version of MusicLM
 - AudioLM is able to create speech and music
 - Studying AudioLM allows us to see the change and improvement that MusicLM provides
 - It's amazing to see where the technology of music automation has started and moved toward, as a Computer Scientist I am most interested in the future of technology.
 	- Understanding the roots is important to forecasting the future
 	- [Ada Lovelace](https://www.britannica.com/biography/Charles-Babbage) comes to mind, manipulating Babbage's machines to compute Bernoulli numbers
 		- This technology eventually led to music boxes, and with the technological revololution, synthasizers
-**Biases**:
+-**Biases**:
 - There exists bias in this model, as seemingly with most models.
 	- There is an under represented variety of accents in voice continuation
 		- The accents that exist, at least given examples, are mainly US english speakers

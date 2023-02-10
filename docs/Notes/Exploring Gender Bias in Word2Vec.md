@@ -37,7 +37,7 @@ Exploring Gender Bias in Word2Vec. (2021, June 10). Chanind.Github.Io. https://c
 ---
 
 ### Related Links
-I find it interesting that we can learn about what biases our society holds by understanding the data deeply.
+-I find it interesting that we can learn about what biases our society holds by understanding the data deeply.
 - For example, the fact that %70 of words inherintly have a male bias :
 	- might indicate gender roles and societal norms that lead to men in media 
 	- This could also show a lack of representation of women in leadership positions
