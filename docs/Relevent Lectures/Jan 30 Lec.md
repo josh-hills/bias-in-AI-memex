@@ -37,6 +37,7 @@ Charles Babbage:
 
 Music generation AI
 https://google-research.github.io/seanet/musiclm/examples/
+[[AudioLM]] and [[MusicLM]]
 
 
 Early computers 
