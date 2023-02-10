@@ -43,6 +43,7 @@ Exploring Gender Bias in Word2Vec. (2021, June 10). Chanind.Github.Io. https://c
 	- This could also show a lack of representation of women in leadership positions
 	- sports are male dominated domains
 -  Careers that are associated with men/women
+
 	![gender-biases-word2vec.JPG](../assets/gender-biases-word2vec.JPG)
 	- This indicates other historical and cultural stereotypes
 	- Systemic gender biases
