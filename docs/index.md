@@ -13,4 +13,4 @@ After reading those, exploring the **Thoughts** directory would be ideal, with u
 ## Notes
 Apologies if I ever get too technical, I am computer science student and love understanding how the AI works. I found that having a deeper understanding of the framework gives me a more complete view of **Bias in AI**.   
 
-![network.png](../assets/network.png)  
+![network.png](./assets/network.png)  
