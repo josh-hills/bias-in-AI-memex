@@ -11,4 +11,6 @@ A good entry point into this memex I think is [[Word2Vec]]. This will introduce 
 After reading those, exploring the **Thoughts** directory would be ideal, with understanding of machine learning and the biases that might underlie it. These thoughts will explain the importance of reducing bias in models as well as why it's not an easy problem to solve.
 
 ## Notes
-Apologies if I ever get too technical, I am computer science student and love understanding how the AI works. I found that having a deeper understanding of the framework gives me a more complete view of **Bias in AI**. 
+Apologies if I ever get too technical, I am computer science student and love understanding how the AI works. I found that having a deeper understanding of the framework gives me a more complete view of **Bias in AI**.   
+
+![network.png](../assets/network.png)  
