@@ -21,7 +21,8 @@ projects::[[]]
 	- The Word2Vec model that google provides is 100 billion words trained on news articles
 ---
 ### Citational Information
-_Google Code Archive—Long-term storage for Google Code Project Hosting._ (n.d.). July 29, 2013 Retrieved February 9, 2023, from [https://code.google.com/archive/p/word2vec/](https://code.google.com/archive/p/word2vec/)
+Google Code Archive - Long-term storage for Google Code Project Hosting. (no date). Available at: https://code.google.com/archive/p/word2vec/ (Accessed: 9 February 2023).
+
 
 ---
 

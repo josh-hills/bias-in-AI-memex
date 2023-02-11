@@ -25,7 +25,8 @@ projects::[[]]
 ---
 ### Citational Information
 
-“AudioLM: A Language Modeling Approach to Audio Generation,” October 6, 2022. https://ai.googleblog.com/2022/10/audiolm-language-modeling-approach-to.html.
+AudioLM: a Language Modeling Approach to Audio Generation (2022). Available at: https://ai.googleblog.com/2022/10/audiolm-language-modeling-approach-to.html (Accessed: 31 January 2023).
+
 
 ---
 

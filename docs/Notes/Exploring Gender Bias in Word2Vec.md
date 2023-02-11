@@ -32,7 +32,9 @@ projects::[[]]
 		- It's suggested that "husband" is female associated because it is often surrounded by a strongly female word, for example "her husband" or "Julie's husband"
 ---
 ### Citational Information
-Exploring Gender Bias in Word2Vec. (2021, June 10). Chanind.Github.Io. https://chanind.github.io/nlp/2021/06/10/word2vec-gender-bias.html
+
+Exploring Gender Bias in Word2Vec (2021) chanind.github.io. Available at: https://chanind.github.io/nlp/2021/06/10/word2vec-gender-bias.html (Accessed: 9 February 2023).
+
 
 ---
 

@@ -21,7 +21,7 @@ projects::[[]]
 ---
 ### Citational Information
 
-Agostinelli, Andrea, Timo I. Denk, Zalán Borsos, Jesse Engel, Mauro Verzetti, Antoine Caillon, Qingqing Huang, et al. “MusicLM: Generating Music From Text.” arXiv, January 26, 2023. https://doi.org/10.48550/arXiv.2301.11325.
+Agostinelli, A. et al. (2023) ‘MusicLM: Generating Music From Text’. arXiv. Available at: https://doi.org/10.48550/arXiv.2301.11325.
 
 
 ---
