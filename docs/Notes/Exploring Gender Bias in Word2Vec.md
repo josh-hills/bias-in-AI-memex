@@ -33,7 +33,7 @@ projects::[[]]
 ---
 ### Citational Information
 
-Exploring Gender Bias in Word2Vec (2021) chanind.github.io. Available at: https://chanind.github.io/nlp/2021/06/10/word2vec-gender-bias.html (Accessed: 9 February 2023).
+Exploring Gender Bias in Word2Vec (2021) chanind.github.io. Available at: [[https://chanind.github.io/nlp/2021/06/10/word2vec-gender-bias.html]] (Accessed: 9 February 2023).
 
 
 ---

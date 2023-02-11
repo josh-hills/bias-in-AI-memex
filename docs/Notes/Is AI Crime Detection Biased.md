@@ -18,7 +18,7 @@ projects::[[]]
 ---
 ### Citational Information
 
-Magazine, S., Rieland, R., n.d. Artificial Intelligence Is Now Used to Predict Crime. But Is It Biased? [WWW Document]. Smithsonian Magazine. URL https://www.smithsonianmag.com/innovation/artificial-intelligence-is-now-used-predict-crime-is-it-biased-180968337/ (accessed 2.10.23).
+Magazine, S., Rieland, R., n.d. Artificial Intelligence Is Now Used to Predict Crime. But Is It Biased? [WWW Document]. Smithsonian Magazine. URL [[https://www.smithsonianmag.com/innovation/artificial-intelligence-is-now-used-predict-crime-is-it-biased-180968337/]] (accessed 2.10.23).
 
 ---
 
