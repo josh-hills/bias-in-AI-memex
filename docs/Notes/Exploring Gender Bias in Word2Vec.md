@@ -1,4 +1,3 @@
-
 ---
 Title: Exploring Gender Bias in Word2Vec
 date: 2023-02-09

@@ -1,3 +1,16 @@
+---
+Title: From Clay Tablets to Web
+date: 2023-02-23
+type: literature
+project:
+---
+tags:: 
+projects::[[]]
+
+### Reference
+Kumar, Shiv. 2013. "From Clay Tablets to Web: Journey of Library Catalogue" DESIDOC Journal of Library & Information Technology 33.1: 45-54.
+
+### Summary
 Discusses the evolution of library catalogues from clay tablets to the web-based catalogue
 - We can imagine three (there are many more) distinct stages:
 	1. Clay Tablets
