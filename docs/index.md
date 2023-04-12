@@ -1,16 +1,9 @@
-# Exploring bias through the lens of AI
-Throughout this exporation I want to cover and ponder the following questions:
-- What causes an AI to be biased?
-- How do these biases affect the final outcome?
-- Is there a trade-off in eliminating biases?
+# A Journey Through Internet History and AI Ethics
+### Reflecting on the Lessons Learned in Professor Graham's Class
 
-## Entry point
-A good entry point into this memex I think is [[Word2Vec]]. This will introduce NLP (Natural Language Processing) and is an entry way into [[Exploring Gender Bias in Word2Vec]], which explains the problems underlying a lot of machine learning models.
+I want to express my gratitude for the engaging and thought-provoking course you've led this semester. The topics we've explored have not only broadened my understanding of the technological world we live in but have also challenged me to consider the ethical implications and potential consequences of advancements in artificial intelligence and the internet.
 
-## Further reading
-After reading those, exploring the **Thoughts** directory would be ideal, with understanding of machine learning and the biases that might underlie it. These thoughts will explain the importance of reducing bias in models as well as why it's not an easy problem to solve.
+To address NEW changes:
+Please see "NEW" at the end of a document to indicate NEW thoughts and NEW sources.
 
-## Notes
-Apologies if I ever get too technical, I am computer science student and love understanding how the AI works. I found that having a deeper understanding of the framework gives me a more complete view of **Bias in AI**.   
-
-![network.png](./assets/network.png)  
+In this collection of reflections, I've delved into the unexpected evolution of the World Wide Web, the trade-offs of eliminating bias in AI, the potential misuse of AI in education, and the concerning implications of AI-generated adult content. Through these explorations, I've gained valuable insights into the complex nature of the ever-evolving digital landscape.
