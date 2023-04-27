@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../Trade%20off%20of%20eliminating%20bias%20in%20AI/" rel="prev"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.8" name="generator"/>
+<title>What biases exist in machine learning models - AI Bias Exploration</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI Bias Exploration" class="md-header__button md-logo" data-md-component="logo" href="../.." title="AI Bias Exploration">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI Bias Exploration
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              What biases exist in machine learning models
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI Bias Exploration" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="AI Bias Exploration">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    AI Bias Exploration
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        A Journey Through Internet History and AI Ethics
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../0_Final%20Journey_1/">
+        0 Final Journey 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../0_Final%20Journey_2/">
+        0 Final Journey 2
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Alone%20together%20-%20NEW/">
+        Alone together   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Anatomy%20of%20an%20AI%20system/">
+        Anatomy of an AI system
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/AudioLM/">
+        AudioLM
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Bias%20in%20AI/">
+        Bias in AI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Electric%20Cars%20-%20NEW/">
+        Electric Cars   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Exploring%20Gender%20Bias%20in%20Word2Vec/">
+        Exploring Gender Bias in Word2Vec
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/From%20Clay%20Tablets%20to%20Web%2C%20Kumar/">
+        From Clay Tablets to Web, Kumar
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Green%20Revolution%20-%20NEW/">
+        Green Revolution   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/History%20Of%20AI/">
+        History Of AI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Is%20AI%20Crime%20Detection%20Biased/">
+        Is AI Crime Detection Biased
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Luigi%20Federico%20Menabrea%20paying%20tribute%20to%20Ada%20Lovelace/">
+        Luigi Federico Menabrea paying tribute to Ada Lovelace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Media%20as%20Historical%20Subjects%20-%20Lisa%20Gitelman/">
+        Media as Historical Subjects   Lisa Gitelman
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/MusicLM/">
+        MusicLM
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Online%20Learning%20-%20NEW/">
+        Online Learning   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/The%20Amherst%20Method/">
+        The Amherst Method
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Turing%20Machine%20-%20NEW/">
+        Turing Machine   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Notes/Word2Vec/">
+        Word2Vec
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Thoughts
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Thoughts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AI%20and%20Green%20Revolution%20-%20NEW/">
+        AI and Green Revolution   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AI%20and%20Social%20Media%20-%20NEW/">
+        AI and Social Media   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AI%20is%20Deep/">
+        AI is Deep
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../AI%20with%20Screen%20Time%20issue%20-%20NEW/">
+        AI with Screen Time issue   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Amherst%20Food%20Secuirty%20-%20NEW/">
+        Amherst Food Secuirty   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Electric%20Cars%20and%20Urban%20planning%20-%20NEW/">
+        Electric Cars and Urban planning   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Electric%20Cars%20x%20Online%20Learning%20-%20NEW/">
+        Electric Cars x Online Learning   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Impact%20of%20social%20media%20on%20education%20-%20NEW/">
+        Impact of social media on education   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Innovations%20-%20NEW/">
+        Innovations   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Michael%20Web%20response%20-%20NEW/">
+        Michael Web response   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Parallel%20from%20the%20Amherst%20Method%2C%20AI%20and%20Crypto/">
+        Parallel from the Amherst Method, AI and Crypto
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Sophie%20AI%20response%20-%20NEW/">
+        Sophie AI response   NEW
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Teaching%20and%20Technology/">
+        Teaching and Technology
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../The%20Turing%20Machine/">
+        The Turing Machine
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Trade%20off%20of%20eliminating%20bias%20in%20AI/">
+        Trade off of eliminating bias in AI
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        What biases exist in machine learning models
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>What biases exist in machine learning models</h1>
+<p>tags::  #bias #AI
+projects::<a href="#"></a></p>
+<ul>
+<li>I'm curious after doing some readings on <a href="../../Notes/MusicLM/">MusicLM</a> and <a href="../../Notes/AudioLM/">AudioLM</a>: how was data they have collected and does it avoid biases that could be reflected?</li>
+<li>Before I dig into this, I'll reflect quickly on how I imagine AI (Artificial Intelligence) models reflect biases<ul>
+<li>It really depends on the model but to use the example of NLP (natural language processing):<ul>
+<li>NLP generates text by learning text representations through text data, it builds associations between words to understand how it works</li>
+<li>Where does bias come in?<ul>
+<li>Well as the professor mentioned in [[Jan 30 Lec]], models reflect the data they were trained on</li>
+<li>This means if a NLP model is trained on the text of twitter users, it might reflect opinions and associations that twitter users share</li>
+<li>This can be really dangerous, we can imagine an AI that associates racist, homophobic or misogynistic views</li>
+<li>For example the AI may create an association between racialized groups and lower income jobs.<ul>
+<li>I can imagine an AI that is given resumes and tries to find the ideal candidate.<ul>
+<li>If the AI is trained on data of the company's past employment, it may reflect similar biases (ex. hiring men more often than women, hiring people with white names and other possibly horrible associations)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I think it's super important that when we develop AI models we take a close look at the dataset, making sure we avoid bias<ul>
+<li>This forces me to look at the biases that our society currently reflects </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
